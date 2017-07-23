@@ -1,0 +1,46 @@
+<!-- % load staticfiles % -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paython</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>    
+    <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>      
+</head>
+
+<body>
+<div class="wrapper">
+    <!--header-->
+    <header id="header">
+        <img src='{% static "img/trash-icon.png" %}' class="header-icon" />
+        
+        <a href="{% url 'create'%}"><img src='{% static "img/edit-icon.png" %}' class="header-icon" /></a> 
+    </header>
+    <!--/ header-->
+    <!---->
+    <div class="dvRow">
+        {% block side_block%}
+        {%endblock%}
+        <!---->
+    </div>
+    
+    </div>
+    <!---->
+    <!--contact ends-->
+    <script src='{% static "js/jquery.min.js" %}' ></script> 
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+			$(".note-panel").click(function () {
+			    $(".note-panel").removeClass("active");    
+			    $(this).addClass("active");   
+			});
+		});
+    </script>
+</body>
+
+</html>

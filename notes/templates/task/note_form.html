@@ -1,0 +1,42 @@
+{% extends 'task/base.html' %}
+
+{% block side_block%}
+<aside id="sidebar">
+            
+             
+ 
+        </aside>
+        <section id="content">
+            <div class="message-top-date">
+                21 july 2017 3:45 PM                
+            </div>
+            <div class="message-area">
+                Testing Note Features
+            </div>
+
+		 <form action="." method="POST">
+		  {% csrf_token %}
+		  
+		  <table>
+		    <thead>
+		        {% for field in form %}
+		            <th>{{ field.label }}</th>
+		        {% endfor %}
+		    </thead>
+		    <tbody>
+		        <tr>
+		            {% for field in form %}
+		                <td>{{ field }}</td>
+		            {% endfor %}
+		        </tr>
+		    </tbody>
+		</table>
+
+		  <input id="save_contact" type="submit" value="Save" />
+		</form>
+            
+
+        </section>
+{%endblock%}
+
+hello

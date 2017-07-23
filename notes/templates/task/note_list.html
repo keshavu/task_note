@@ -1,0 +1,34 @@
+{% extends 'task/base.html' %}
+{% load static %}
+{% block side_block%}
+<aside id="sidebar">
+
+            {%for i in notes%}
+
+            <div class="note-panel"> 
+                <div class="note-panel-inner">
+                    <b>{{i}}</b><br>
+                    {{i.published_date}} {{i.additional_text}}  
+
+                    
+                    <a href="{% url 'delete' i.pk %}">          
+                <img src='{% static "img/trash-icon.png" %}' class="header-icon" />
+                </a>
+                </div>   
+                <div class="note-panel-seprator"></div>
+            </div>  
+            {%endfor%}
+     
+        </aside>
+        <section id="content">
+            <div class="message-top-date">
+                21 july 2017 3:45 PM                
+            </div>
+            <div class="message-area">
+                Testing Note Features
+            </div>
+
+            
+
+        </section>
+{%endblock%}
